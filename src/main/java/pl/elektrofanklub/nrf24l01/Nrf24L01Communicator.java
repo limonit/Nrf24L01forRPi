@@ -122,7 +122,7 @@ public class Nrf24L01Communicator {
         Spi.wiringPiSPISetup(channel, speed);
         softReset();
         writeRegister(Nrf24L01Registers.CONFIG, (short) (readRegister(Nrf24L01Registers.CONFIG) & ~(1 << Nrf24L01Registers.CRCO) | 1 << Nrf24L01Registers.EN_CRC)); //enable 1 byte CRC -- default TODO: try comment
-        writeRegister(Nrf24L01Registers.SETUP_RETR, (short) (Nrf24L01Registers.ARD_1500US | Nrf24L01Registers.ARC_3)); //auto retransmit delay=1500us (250kbps), auto retransmit count=3
+        writeRegister(Nrf24L01Registers.SETUP_RETR, (short) (Nrf24L01Registers.ARD_1500US | 15)); //auto retransmit delay=1500us (250kbps), auto retransmit count=3
         setTxPower(Nrf24L01Communicator.TxPower.DBM0);
         writeRegister(Nrf24L01Registers.EN_AA, (short) (1 << Nrf24L01Registers.HAL_NRF_PIPE0 | 1 << Nrf24L01Registers.HAL_NRF_PIPE1)); //enable ACK data pipe 0
         writeRegister(Nrf24L01Registers.EN_RXADDR, (short)(1 << (Nrf24L01Registers.HAL_NRF_PIPE0)));
