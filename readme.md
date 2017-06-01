@@ -4,7 +4,7 @@ Library for interfacing chip Nrf24L01(+) with RaspberryPi. Project is written in
 
 ## Motivation
 
-Nrf24L01 modules are chip and give great possibilities, but they are not very easy to handle. This library makes posiible to start using them in just few lines of code which is the main purpose. 
+Nrf24L01 modules are cheap and give great possibilities, but they are not very easy to handle. This library makes posiible to start using them in just few lines of code which is the main purpose. 
 
 ## Installation
 
